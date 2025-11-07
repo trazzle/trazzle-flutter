@@ -25,3 +25,28 @@ class SubColors {
   static final sy800 = Color(0xffFA922C);
   static final sy900 = Color(0xffF38329);
 }
+
+class Colors {
+  static final white = Color(0xffffffff);
+  static final g50 = Color(0xffF2F4F5);
+  static final g100 = Color(0xffDDE1E3);
+
+  // 비활성화 bg
+  static final g200 = Color(0xffC1C7CA);
+
+  static final g300 = Color(0xffA2A9AD);
+  static final g400 = Color(0xff878D96);
+
+  // 비활성화 text
+  static final g500 = Color(0xff697074);
+  
+  static final g600 = Color(0xff4D5358);
+  static final g700 = Color(0xff343A3C);
+  static final g800 = Color(0xff212727);
+  static final g900 = Color(0xff121616);
+
+  static final overlay = Color(0x80121616);
+  static final error = Color(0xffFF3838);
+  static final warning = Color(0xffFFDB1E);
+  static final success = Color(0xff19AE43);
+}
