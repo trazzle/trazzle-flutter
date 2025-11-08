@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class CustomSplashScreen extends StatefulWidget {
+  const CustomSplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<CustomSplashScreen> createState() => _CustomSplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _CustomSplashScreenState extends State<CustomSplashScreen> {
   @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/home');
     });
   }
 
