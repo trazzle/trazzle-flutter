@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trazzle/presentation/const/colors.dart';
 import 'package:trazzle/presentation/const/typography.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
@@ -22,8 +23,9 @@ class _CustomAppBarWidgetState extends State<AppBarWidget> {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-          widget.title,
-        style: Typo().h28,
+        widget.title,
+        // Figma: Typography: h28
+        style: Typo(PrimaryColors.p900).h18,
       ),
     );
   }
