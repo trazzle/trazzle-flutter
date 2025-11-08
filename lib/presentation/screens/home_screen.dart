@@ -12,7 +12,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "TEST"),
+      appBar: AppBarWidget(title: "Trazzle에서 내 여행을 기록해요!"),
+      body: Center(
+
+      ),
     );
   }
 }

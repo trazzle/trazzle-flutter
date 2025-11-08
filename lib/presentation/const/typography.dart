@@ -7,8 +7,8 @@ class FontStyle {
   static const light = FontWeight.w300;
 }
 
-class Typography {
-  static final TextStyle h28 = TextStyle(
+class Typo {
+  final TextStyle h28 = TextStyle(
     fontSize: 28,
     fontWeight: FontStyle.semiBold,
     height: 24,
