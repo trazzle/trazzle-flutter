@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:trazzle/presentation/const/assets.dart';
 import 'package:trazzle/presentation/const/colors.dart';
 import 'package:trazzle/presentation/const/typography.dart';
+import 'package:trazzle/presentation/widgets/svg_icon.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final String title;
@@ -30,20 +32,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
       ),
       actions: [
         IconButton(
-          icon: SvgPicture.asset(
-            'assets/share_icon.svg',
-            width: 24,
-            height: 24,
-          ),
+          icon: SvgIcon(assets: Assets().shareIcon),
           onPressed: null
         ),
 
         IconButton(
-            icon: SvgPicture.asset(
-              'assets/chart_icon.svg',
-              width: 24,
-              height: 24,
-            ),
+            icon: SvgIcon(assets: Assets().chartIcon),
             onPressed: null
         ),
       ],
