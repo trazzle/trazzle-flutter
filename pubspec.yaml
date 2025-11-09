@@ -69,6 +69,10 @@ flutter:
     - assets/share_icon.svg
     - assets/chart_icon.svg
     - assets/add_icon.svg
+    - assets/global_icon.svg
+    - assets/book_icon.svg
+    - assets/book_g_icon.svg
+    - assets/global_g_icon.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

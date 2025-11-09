@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:trazzle/presentation/const/assets.dart';
 import 'package:trazzle/presentation/ui/screens/home_screen.dart';
 import 'package:trazzle/presentation/ui/screens/story_screen.dart';
+import 'package:trazzle/presentation/const/colors.dart';
+import 'package:trazzle/presentation/widgets/svg_icon.dart';
 
 List<Widget> _buildScreens() {
   return [
@@ -14,8 +17,8 @@ List<Widget> _buildScreens() {
 List<PersistentBottomNavBarItem> _navBarsItems() {
   return [
     PersistentBottomNavBarItem(
-      icon: Icon(CupertinoIcons.home),
-      title: ("Home"),
+      icon: SvgIcon(assets: Assets().globalIcon),
+      title: ("홈"),
       activeColorPrimary: CupertinoColors.activeBlue,
       inactiveColorPrimary: CupertinoColors.systemGrey,
       routeAndNavigatorSettings: RouteAndNavigatorSettings(
@@ -27,8 +30,8 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
       ),
     ),
     PersistentBottomNavBarItem(
-      icon: Icon(CupertinoIcons.settings),
-      title: ("Settings"),
+      icon: SvgIcon(assets: Assets().bookIcon),
+      title: ("지도집"),
       activeColorPrimary: CupertinoColors.activeBlue,
       inactiveColorPrimary: CupertinoColors.systemGrey,
       routeAndNavigatorSettings: RouteAndNavigatorSettings(
@@ -69,8 +72,7 @@ class _BottomNaviBarState extends State<BottomNaviBar> with SingleTickerProvider
       resizeToAvoidBottomInset: true,
       stateManagement: true,
       hideNavigationBarWhenKeyboardAppears: true,
-      padding: const EdgeInsets.only(top: 8),
-      backgroundColor: MainColor,
+      backgroundColor: MainColors.white,
       isVisible: true,
       animationSettings: const NavBarAnimationSettings(
         navBarItemAnimation: ItemAnimationSettings(
@@ -85,6 +87,7 @@ class _BottomNaviBarState extends State<BottomNaviBar> with SingleTickerProvider
       ),
       confineToSafeArea: true,
       navBarHeight: kBottomNavigationBarHeight,
+      navBarStyle: NavBarStyle.style6,
     );
   }
 }
