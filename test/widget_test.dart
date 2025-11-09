@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:trazzle/main.dart';
-import 'package:trazzle/presentation/screens/home_screen.dart';
-import 'package:trazzle/presentation/screens/splash_screen.dart';
+import 'package:trazzle/presentation/ui/screens/home_screen.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:trazzle/presentation/screens/home_screen.dart';
+import 'package:trazzle/presentation/component/bar/bottom_navi_bar.dart';
+import 'package:trazzle/presentation/ui/screens/home_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -17,19 +18,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, // 투명하게
-        statusBarIconBrightness: Brightness.dark, // 아이콘 색상 (Android)
-      ),
-    );
-
     return MaterialApp(
       title: 'Trazzle 프로젝트',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomeScreen(),
+      home: const BottomNaviBar(),
     );
   }
 }
