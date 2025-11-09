@@ -38,6 +38,9 @@ dependencies:
   # svg 선언하기 위해 사용
   flutter_svg: ^2.2.2
 
+  # bottom_navigation_bar 선언
+  persistent_bottom_nav_bar: ^6.2.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
