@@ -41,6 +41,9 @@ dependencies:
   # bottom_navigation_bar 선언
   persistent_bottom_nav_bar: ^6.2.1
 
+  # 스플래시 화면
+  flutter_native_splash: ^2.4.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -73,6 +76,7 @@ flutter:
     - assets/book_icon.svg
     - assets/book_g_icon.svg
     - assets/global_g_icon.svg
+    - assets/logo_simbol_w.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

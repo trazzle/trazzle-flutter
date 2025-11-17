@@ -25,6 +25,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       title: Text(
         widget.title,
         // Figma: Typography: h18
@@ -36,9 +38,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
           onPressed: null
         ),
 
-        IconButton(
-            icon: SvgIcon(assets: Assets().chartIcon),
-            onPressed: null
+        Padding(
+          padding: const EdgeInsets.only(right: 12),
+          child: IconButton(
+              icon: SvgIcon(assets: Assets().chartIcon),
+              onPressed: null
+          ),
         ),
       ],
     );

@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:trazzle/presentation/component/bar/bottom_navi_bar.dart';
 import 'package:trazzle/presentation/const/assets.dart';
 import 'package:trazzle/presentation/const/colors.dart';
 import 'package:trazzle/presentation/ui/screens/home_screen.dart';
 import 'package:trazzle/presentation/ui/screens/story_screen.dart';
 import 'package:trazzle/presentation/widgets/svg_icon.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      statusBarBrightness: Brightness.dark
-    )
-  );
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   runApp(const MyApp());
+
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
