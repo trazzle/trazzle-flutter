@@ -26,7 +26,7 @@ class SubColors {
   static final sy900 = Color(0xffF38329);
 }
 
-class Colors {
+class MainColors {
   static final white = Color(0xffffffff);
   static final g50 = Color(0xffF2F4F5);
   static final g100 = Color(0xffDDE1E3);
