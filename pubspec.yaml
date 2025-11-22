@@ -44,6 +44,9 @@ dependencies:
   # 스플래시 화면
   flutter_native_splash: ^2.4.7
 
+  # 세계 지도 그리기
+  path_drawing: ^1.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -77,6 +80,7 @@ flutter:
     - assets/book_g_icon.svg
     - assets/global_g_icon.svg
     - assets/logo_simbol_w.png
+    - assets/country/world_map.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
