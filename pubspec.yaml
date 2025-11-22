@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   # svg 선언하기 위해 사용
-  flutter_svg: ^2.2.2
+  flutter_svg: ^1.1.6
 
   # bottom_navigation_bar 선언
   persistent_bottom_nav_bar: ^6.2.1

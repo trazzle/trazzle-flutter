@@ -13,5 +13,5 @@ class Country {
     required this.path,
     this.isSelected = false,
     this.color = Colors.grey
-  })
+  });
 }
