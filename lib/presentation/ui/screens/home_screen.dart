@@ -24,11 +24,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+
+    // 초기 scale 1.5 설정
+    _controller.value = Matrix4.identity()..scale(1.5);
+
     loadSvg();
   }
 
   Future<void> loadSvg() async {
     countries = await parseCountries(context, "assets/country/world_map.svg");
+
     setState(() {});
   }
 
@@ -39,29 +44,58 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: CustomAppBar(title: "Trazzle에서 내 여행을 기록해요!"),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          return GestureDetector(
-            onTapUp: (details) {
-              // 화면 좌표 → SVG(viewBox) 좌표로 변환
-              final svgPoint = _controller.toScene(details.localPosition);
+          final screenWidth = constraints.maxWidth;
+          final screenHeight = constraints.maxHeight;
 
-              for (final c in countries) {
-                if (c.path.contains(svgPoint)) {
-                  setState(() {
-                    c.isSelected = true;
-                  });
-                  break;
-                }
-              }
-            },
-            child: InteractiveViewer(
-              transformationController: _controller,
-              minScale: 1.0,
-              maxScale: 5.0,
-              child: CustomPaint(
-                size: Size(viewBoxWidth, viewBoxHeight), // SVG viewBox 크기
-                painter: WorldMapPainter(countries),
+          // SVG 비율 유지
+          final widthScale = screenWidth / viewBoxWidth;
+          final heightScale = screenHeight / viewBoxHeight;
+          final scale = widthScale < heightScale ? widthScale : heightScale;
+
+          final painterWidth = viewBoxWidth * scale;
+          final painterHeight = viewBoxHeight * scale;
+
+          return Column(
+            children: [
+              Center(
+                child: GestureDetector(
+                  onTapUp: (details) {
+                    // 화면 좌표 → SVG(viewBox) 좌표로 변환
+                    final svgPoint = _controller.toScene(details.localPosition);
+
+                    for (final c in countries) {
+                      if (c.path.contains(svgPoint)) {
+                        if (c.isSelected) {
+                          setState(() {
+                            c.isSelected = false;
+                          });
+                        } else {
+                          setState(() {
+                            c.isSelected = true;
+                          });
+                        }
+                        break;
+                      }
+                    }
+                  },
+                  child: InteractiveViewer(
+                    transformationController: _controller,
+                    minScale: 1.0,
+                    maxScale: 3.0,
+                    boundaryMargin: const EdgeInsets.all(500),  // 패닝 허용 넓힘
+                    constrained: false,  // ★ 가장 중요
+                    child: SizedBox(
+                      width: painterWidth,      // ★ expand 금지
+                      height: painterHeight,    // ★ expand 금지
+                      child: CustomPaint(
+                        size: Size(painterWidth, painterHeight),
+                        painter: WorldMapPainter(countries),
+                      ),
+                    ),
+                  ),
+                ),
               ),
-            ),
+            ],
           );
         },
       ),

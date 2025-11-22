@@ -5,14 +5,12 @@ import 'package:trazzle/presentation/const/colors.dart';
 // CustomPainter를 이용하여 국가별 path 그리기
 class WorldMapPainter extends CustomPainter {
   final List<Country> countries;
-  final double scale;
 
-  WorldMapPainter(this.countries, {this.scale = 1.0});
+  WorldMapPainter(this.countries);
 
   @override
   void paint(Canvas canvas, Size size) {
     canvas.save();
-    canvas.scale(scale);
 
     for (final country in countries) {
       // 채우기 색상
