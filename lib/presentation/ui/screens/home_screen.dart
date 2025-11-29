@@ -36,7 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> loadSvg() async {
     countries = await parseCountries(context, "assets/country/world_map.svg");
 
-    setState(() {});
+    for (var country in countries) {
+      print("Home Screen: ${country.id}");
+    }
   }
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trazzle/presentation/const/colors.dart';
+import 'package:trazzle/presentation/const/typography.dart';
 
 class ActionChips extends StatefulWidget {
   final String continent;
@@ -26,7 +27,10 @@ class _ActionChipsState extends State<ActionChips> {
       ),
       elevation: 0.2,
       shadowColor: Color(0xff000000),
-      label: Text(widget.continent),
+      label: Text(
+        widget.continent,
+      ),
+      labelStyle: Typo(MainColors.g600).button1,
       onPressed: () {
 
       },

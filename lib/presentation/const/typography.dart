@@ -84,12 +84,11 @@ class Typo {
     color: Colors.black
   );
 
-  final button1 = TextStyle(
+  TextStyle get button1 => TextStyle(
     fontSize: 15,
     fontWeight: FontStyle.medium,
-    height: 11,
     letterSpacing: 0,
-    color: Colors.black
+    color: color
   );
 
   final button2 = TextStyle(
