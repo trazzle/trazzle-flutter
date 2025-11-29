@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:trazzle/domain/country.dart';
 import 'package:trazzle/presentation/component/bar/app_bar.dart';
 import 'package:trazzle/presentation/component/button/floating_action.dart';
+import 'package:trazzle/presentation/const/colors.dart';
+import 'package:trazzle/presentation/const/const.dart';
 import 'package:trazzle/presentation/ui/painter/painter.dart';
 import 'package:trazzle/presentation/viewmodel/countries_viewmodel.dart';
-import 'package:trazzle/presentation/const/colors.dart';
+import 'package:trazzle/presentation/widgets/chip.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,7 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
           final screenWidth = constraints.maxWidth;
           final screenHeight = constraints.maxHeight;
 
-          // SVG 비율 유지
           final widthScale = screenWidth / viewBoxWidth;
           final heightScale = screenHeight / viewBoxHeight;
           final scale = widthScale < heightScale ? widthScale : heightScale;
@@ -57,23 +58,31 @@ class _HomeScreenState extends State<HomeScreen> {
 
           return Column(
             children: [
-              Center(
+              // 대륙 Chip Row
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                child: Row(
+                  children: Const().continentList.map((continent) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: ActionChips(continent: continent)
+                    );
+                  }).toList(),
+                ),
+              ),
+
+              // 지도 영역
+              Expanded(
                 child: GestureDetector(
                   onTapUp: (details) {
-                    // 화면 좌표 → SVG(viewBox) 좌표로 변환
                     final svgPoint = _controller.toScene(details.localPosition);
 
                     for (final c in countries) {
                       if (c.path.contains(svgPoint)) {
-                        if (c.isSelected) {
-                          setState(() {
-                            c.isSelected = false;
-                          });
-                        } else {
-                          setState(() {
-                            c.isSelected = true;
-                          });
-                        }
+                        setState(() {
+                          c.isSelected = !c.isSelected;
+                        });
                         break;
                       }
                     }
@@ -82,11 +91,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     transformationController: _controller,
                     minScale: 1.0,
                     maxScale: 3.0,
-                    boundaryMargin: const EdgeInsets.all(500),  // 패닝 허용 넓힘
-                    constrained: false,  // ★ 가장 중요
+                    boundaryMargin: const EdgeInsets.all(500),
+                    constrained: false,
                     child: SizedBox(
-                      width: painterWidth,      // ★ expand 금지
-                      height: painterHeight,    // ★ expand 금지
+                      width: painterWidth,
+                      height: painterHeight,
                       child: CustomPaint(
                         size: Size(painterWidth, painterHeight),
                         painter: WorldMapPainter(countries),
