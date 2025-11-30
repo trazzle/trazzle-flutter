@@ -50,3 +50,14 @@ class MainColors {
   static final warning = Color(0xffFFDB1E);
   static final success = Color(0xff19AE43);
 }
+
+// 대륙별 색상
+class ContinentColors {
+  // _100, _50 -> 빈도 100%, 50%
+  static final northAmerica_100 = Color(0xff008BE5);
+  static final africa_100 = Color(0xffFA922C);
+  static final asia_100 = Color(0xff0A9F3A);
+  static final oceania_100 = Color(0xff0A9F3A);
+  static final europe_100 = Color(0xffEC5199);
+  static final southAmerica_100 = Color(0xffEC5199);
+}

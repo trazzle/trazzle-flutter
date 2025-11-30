@@ -1,9 +1,13 @@
+import 'dart:ui';
+
+import 'package:trazzle/presentation/const/colors.dart';
+
 class Const {
   // 대륙 리스트
   final continentList = [ "아시아", "유럽", "아프리카", "북아메리카", "남아메리카", "오세아니아" ];
 
   // 국가 -> 대륙 매핑
-  final Map<String, String> countryToContinent = {
+  final Map<String, String> countryToContinentList = {
     "Namibia": "아프리카",
     "Zimbabwe": "아프리카",
     "Botswana": "아프리카",
@@ -171,5 +175,15 @@ class Const {
     "EastTimor": "아시아",
     "Italy": "유럽",
     "Montenegro": "유럽",
+  };
+
+  /// 대륙별 색상 매핑
+  final Map<String, Color> continentColorsList = {
+    "아시아": ContinentColors.asia_100,
+    "유럽": ContinentColors.europe_100,
+    "아프리카": ContinentColors.africa_100,
+    "북아메리카": ContinentColors.northAmerica_100,
+    "남아메리카": ContinentColors.southAmerica_100,
+    "오세아니아": ContinentColors.oceania_100,
   };
 }

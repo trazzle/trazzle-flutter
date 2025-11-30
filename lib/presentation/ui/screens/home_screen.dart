@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
     for (var country in countries) {
       print("Home Screen: ${country.id}");
 
-      country.continent = Const().countryToContinent[country.id] ?? "Unknown";
+      country.continent = Const().countryToContinentList[country.id] ?? "Unknown";
     }
   }
 

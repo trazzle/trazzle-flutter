@@ -57,8 +57,6 @@ class _ActionChipsState extends State<ActionChips> {
           for (var country in continentCountries) {
             country.isSelected = _isSelected;
           }
-
-          print("Chip: $_isSelected");
         });
       },
     );
