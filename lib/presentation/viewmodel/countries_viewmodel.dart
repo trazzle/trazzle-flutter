@@ -12,13 +12,15 @@ Future<List<Country>> parseCountries(BuildContext context, String assetPath) asy
 
   void extract(Drawable drawable) {
     if (drawable is DrawableShape) {
-      print("CountriesViewModel: ${drawable.path.getBounds()}");
-
       final path = drawable.path;
       final id = drawable.id ?? "unknown";
 
       countries.add(
-        Country(id: id, path: path),
+        Country(
+          id: id,
+          path: path,
+          continent: ''
+        ),
       );
     }
 

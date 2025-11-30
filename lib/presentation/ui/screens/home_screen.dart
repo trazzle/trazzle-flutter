@@ -36,8 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> loadSvg() async {
     countries = await parseCountries(context, "assets/country/world_map.svg");
 
+    // 국가 -> 대륙 매핑
     for (var country in countries) {
       print("Home Screen: ${country.id}");
+
+      country.continent = Const().countryToContinent[country.id] ?? "Unknown";
     }
   }
 
@@ -66,9 +69,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                 child: Row(
                   children: Const().continentList.map((continent) {
+                    final isSelected = countries.any((c) => c.continent == continent && c.isSelected);
+
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: ActionChips(continent: continent)
+                      child: ActionChips(
+                        countries: countries,
+                        continent: continent,
+                        isSelected: isSelected
+                      )
                     );
                   }).toList(),
                 ),

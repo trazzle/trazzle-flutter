@@ -53,7 +53,7 @@ class Const {
     "Kyrgyzstan": "아시아",
     "Georgia": "아시아",
     "Türkiye": "아시아",
-    "North Korea": "아시아",
+    "NorthKorea": "아시아",
     "Nepal": "아시아",
     "Myanmar": "아시아",
     "Butane": "아시아",
