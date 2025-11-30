@@ -35,6 +35,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
+  # svg 선언하기 위해 사용
+  flutter_svg: ^1.1.6
+
+  # bottom_navigation_bar 선언
+  persistent_bottom_nav_bar: ^6.2.1
+
+  # 스플래시 화면
+  flutter_native_splash: ^2.4.7
+
+  # 세계 지도 그리기
+  path_drawing: ^1.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -58,9 +70,16 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/share_icon.svg
+    - assets/chart_icon.svg
+    - assets/add_icon.svg
+    - assets/global_icon.svg
+    - assets/book_icon.svg
+    - assets/book_g_icon.svg
+    - assets/global_g_icon.svg
+    - assets/logo_simbol_w.png
+    - assets/country/world_map.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

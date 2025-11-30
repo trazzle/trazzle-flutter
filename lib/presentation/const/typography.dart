@@ -7,32 +7,36 @@ class FontStyle {
   static const light = FontWeight.w300;
 }
 
-class Typography {
-  static final TextStyle h28 = TextStyle(
+class Typo {
+  final Color color;
+
+  Typo(this.color);
+
+  TextStyle get h28 => TextStyle(
     fontSize: 28,
     fontWeight: FontStyle.semiBold,
     height: 24,
     letterSpacing: 0,
-    color: Colors.black
+    color: color
   );
 
-  static final TextStyle h22 = TextStyle(
+  TextStyle get h22 => TextStyle(
     fontSize: 22,
     fontWeight: FontStyle.semiBold,
     height: 16,
     letterSpacing: 0,
-    color: Colors.black
+    color: color
   );
 
-  static final TextStyle h18 = TextStyle(
+  TextStyle get h18 => TextStyle(
     fontSize: 18,
     fontWeight: FontStyle.semiBold,
     height: 14,
     letterSpacing: 0,
-    color: Colors.black
+    color: color
   );
 
-  static final TextStyle subTitle = TextStyle(
+  final TextStyle subTitle = TextStyle(
     fontSize: 14,
     fontWeight: FontStyle.medium,
     height: 12,
@@ -40,7 +44,7 @@ class Typography {
     color: Colors.black
   );
 
-  static final body1 = TextStyle(
+  final body1 = TextStyle(
     fontSize: 16,
     fontWeight: FontStyle.regular,
     height: 13,
@@ -48,7 +52,7 @@ class Typography {
     color: Colors.black
   );
 
-  static final body2 = TextStyle(
+  final body2 = TextStyle(
     fontSize: 16,
     fontWeight: FontStyle.medium,
     height: 13,
@@ -56,7 +60,7 @@ class Typography {
     color: Colors.black
   );
 
-  static final body3 = TextStyle(
+  final body3 = TextStyle(
     fontSize: 14,
     fontWeight: FontStyle.light,
     height: 10,
@@ -64,7 +68,7 @@ class Typography {
     color: Colors.black
   );
 
-  static final body4 = TextStyle(
+  final body4 = TextStyle(
     fontSize: 14,
     fontWeight: FontStyle.regular,
     height: 11,
@@ -72,7 +76,7 @@ class Typography {
     color: Colors.black
   );
 
-  static final label = TextStyle(
+  final label = TextStyle(
     fontSize: 16,
     fontWeight: FontStyle.medium,
     height: 13,
@@ -80,15 +84,14 @@ class Typography {
     color: Colors.black
   );
 
-  static final button1 = TextStyle(
+  TextStyle get button1 => TextStyle(
     fontSize: 15,
     fontWeight: FontStyle.medium,
-    height: 11,
     letterSpacing: 0,
-    color: Colors.black
+    color: color
   );
 
-  static final button2 = TextStyle(
+  final button2 = TextStyle(
     fontSize: 14,
     fontWeight: FontStyle.medium,
     height: 11,
@@ -96,7 +99,7 @@ class Typography {
     color: Colors.black
   );
 
-  static final caption = TextStyle(
+  final caption = TextStyle(
     fontSize: 12,
     fontWeight: FontStyle.light,
     letterSpacing: 0,

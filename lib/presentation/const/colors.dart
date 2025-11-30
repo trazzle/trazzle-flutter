@@ -26,7 +26,7 @@ class SubColors {
   static final sy900 = Color(0xffF38329);
 }
 
-class Colors {
+class MainColors {
   static final white = Color(0xffffffff);
   static final g50 = Color(0xffF2F4F5);
   static final g100 = Color(0xffDDE1E3);
@@ -49,4 +49,15 @@ class Colors {
   static final error = Color(0xffFF3838);
   static final warning = Color(0xffFFDB1E);
   static final success = Color(0xff19AE43);
+}
+
+// 대륙별 색상
+class ContinentColors {
+  // _100, _50 -> 빈도 100%, 50%
+  static final northAmerica_100 = Color(0xff008BE5);
+  static final africa_100 = Color(0xffFA922C);
+  static final asia_100 = Color(0xff0A9F3A);
+  static final oceania_100 = Color(0xff0A9F3A);
+  static final europe_100 = Color(0xffEC5199);
+  static final southAmerica_100 = Color(0xffEC5199);
 }
