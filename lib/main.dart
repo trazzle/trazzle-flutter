@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trazzle/presentation/const/assets.dart';
 import 'package:trazzle/presentation/const/colors.dart';
 import 'package:trazzle/presentation/ui/screens/home_screen.dart';
+import 'package:trazzle/presentation/ui/screens/onboarding/onboarding_screen.dart';
 import 'package:trazzle/presentation/ui/screens/story_screen.dart';
 import 'package:trazzle/presentation/widgets/svg_icon.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Trazzle 프로젝트',
-      home: const MainPage(),
+      home: const OnboardingScreen(),
     );
   }
 }

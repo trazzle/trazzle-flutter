@@ -9,12 +9,16 @@ class FontStyle {
 
 class Typo {
   final Color color;
+  final FontWeight fontWeight;
 
-  Typo(this.color);
+  Typo(
+      this.color, [
+      this.fontWeight = FontStyle.medium
+  ]);
 
   TextStyle get h28 => TextStyle(
     fontSize: 28,
-    fontWeight: FontStyle.semiBold,
+    fontWeight: fontWeight,
     height: 24,
     letterSpacing: 0,
     color: color
