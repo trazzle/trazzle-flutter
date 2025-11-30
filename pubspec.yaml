@@ -74,6 +74,7 @@ flutter:
     - assets/share_icon.svg
     - assets/chart_icon.svg
     - assets/add_icon.svg
+    - assets/close_icon.svg
     - assets/global_icon.svg
     - assets/book_icon.svg
     - assets/book_g_icon.svg

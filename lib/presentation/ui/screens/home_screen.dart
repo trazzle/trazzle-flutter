@@ -38,8 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     // 국가 -> 대륙 매핑
     for (var country in countries) {
-      print("Home Screen: ${country.id}");
-
       country.continent = Const().countryToContinentList[country.id] ?? "Unknown";
     }
   }
