@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FontStyle {
+  static const extraBold = FontWeight.w800;
   static const semiBold = FontWeight.w600;
   static const medium = FontWeight.w500;
   static const regular = FontWeight.w400;
@@ -19,7 +20,6 @@ class Typo {
   TextStyle get h28 => TextStyle(
     fontSize: 28,
     fontWeight: fontWeight,
-    height: 24,
     letterSpacing: 0,
     color: color
   );
