@@ -186,4 +186,12 @@ class Const {
     "남아메리카": ContinentColors.southAmerica_100,
     "오세아니아": ContinentColors.oceania_100,
   };
+
+  /// 온보딩 이미지
+  final List<String> images = [
+    "images/onboarding_1.png",
+    "images/onboarding_2.png",
+    "images/onboarding_3.png",
+    "images/onboarding_4.png"
+  ];
 }
