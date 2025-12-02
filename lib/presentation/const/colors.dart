@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class PrimaryColors {
   static final p50 = Color(0xffE5F5E8);
   static final p100 = Color(0xffC1E6C6);
@@ -60,4 +62,10 @@ class ContinentColors {
   static final oceania_100 = Color(0xff0A9F3A);
   static final europe_100 = Color(0xffEC5199);
   static final southAmerica_100 = Color(0xffEC5199);
+}
+
+// 버튼 색상
+class ButtonColors {
+  static final yellow = Color(0xffFEE500);
+  static final white = Colors.white;
 }

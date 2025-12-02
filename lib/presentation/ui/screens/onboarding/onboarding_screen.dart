@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trazzle/presentation/const/assets.dart';
 import 'package:trazzle/presentation/const/colors.dart';
+import 'package:trazzle/presentation/const/const.dart';
 import 'package:trazzle/presentation/const/typography.dart';
 import 'package:trazzle/presentation/widgets/slider.dart';
 import 'package:trazzle/presentation/widgets/svg_icon.dart';
@@ -47,6 +49,58 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   child: Text(
                     "당신의 모든 여행",
                     style: Typo(MainColors.white, FontStyle.extraBold).h28,
+                  ),
+                ),
+
+                const SizedBox(height: 320),
+
+                Center(
+                  child: Container(
+                    width: 343,
+                    height: 52,
+                    decoration: BoxDecoration(
+                      color: ButtonColors.yellow, // color를 decoration 안으로
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgIcon(assets: "assets/kakao_icon.svg"),
+
+                        const SizedBox(width: 8),
+
+                        Text(
+                          "카카오로 계속하기",
+                          style: Typo(MainColors.g900, FontStyle.medium).button1,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 22),
+
+                Center(
+                  child: Container(
+                    width: 343,
+                    height: 52,
+                    decoration: BoxDecoration(
+                      color: ButtonColors.white, // color를 decoration 안으로
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgIcon(assets: "assets/google_icon.svg"),
+
+                        const SizedBox(width: 8),
+
+                        Text(
+                          "구글로 계속하기",
+                          style: Typo(MainColors.g900, FontStyle.medium).button1,
+                        )
+                      ],
+                    ),
                   ),
                 )
               ],
