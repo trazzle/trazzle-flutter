@@ -33,16 +33,8 @@ class TravelAppBar extends StatefulWidget implements PreferredSizeWidget {
   State<TravelAppBar> createState() => _TravelAppBarState();
 
   @override
-  Size get preferredSize => throw UnimplementedError();
+  Size get preferredSize => const Size.fromHeight(52.0);
 }
-
-class _TravelAppBarState extends State<TravelAppBar> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
 
 class _CustomAppBarState extends State<CustomAppBar> {
   @override
@@ -69,6 +61,22 @@ class _CustomAppBarState extends State<CustomAppBar> {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _TravelAppBarState extends State<TravelAppBar> {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: MainColors.white,
+      elevation: 0,
+      centerTitle: true,
+      title: Text(
+        widget.title,
+        // Figma: Typography: h18
+        style: Typo(PrimaryColors.p900).label,
+      ),
     );
   }
 }

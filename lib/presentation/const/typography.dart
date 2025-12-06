@@ -67,12 +67,11 @@ class Typo {
     color: Colors.black
   );
 
-  final body1 = TextStyle(
+  TextStyle get body1 => TextStyle(
     fontSize: 16,
     fontWeight: FontStyle.regular,
-    height: 13,
     letterSpacing: 0,
-    color: Colors.black
+    color: color
   );
 
   final body2 = TextStyle(
