@@ -3,6 +3,14 @@ import 'dart:ui';
 import 'package:trazzle/presentation/const/colors.dart';
 
 class Const {
+  // 온보딩 이미지
+  final List<String> images = [
+    "images/onboarding_1.png",
+    "images/onboarding_2.png",
+    "images/onboarding_3.png",
+    "images/onboarding_4.png"
+  ];
+
   // 대륙 리스트
   final continentList = [ "아시아", "유럽", "아프리카", "북아메리카", "남아메리카", "오세아니아" ];
 
