@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:trazzle/presentation/const/assets.dart';
 import 'package:trazzle/presentation/const/colors.dart';
-import 'package:trazzle/presentation/ui/screens/home_screen.dart';
-import 'package:trazzle/presentation/ui/screens/onboarding/onboarding_screen.dart';
-import 'package:trazzle/presentation/ui/screens/story_screen.dart';
+import 'package:trazzle/presentation/ui/screens/home_s.dart';
+import 'package:trazzle/presentation/ui/screens/onboarding/onboarding_s.dart';
+import 'package:trazzle/presentation/ui/screens/story_s.dart';
 import 'package:trazzle/presentation/widgets/svg_icon.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 

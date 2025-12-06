@@ -21,6 +21,29 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(52.0);
 }
 
+class TravelAppBar extends StatefulWidget implements PreferredSizeWidget {
+  final String title;
+
+  const TravelAppBar({
+    super.key,
+    required this.title
+  });
+
+  @override
+  State<TravelAppBar> createState() => _TravelAppBarState();
+
+  @override
+  Size get preferredSize => throw UnimplementedError();
+}
+
+class _TravelAppBarState extends State<TravelAppBar> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
+
 class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
