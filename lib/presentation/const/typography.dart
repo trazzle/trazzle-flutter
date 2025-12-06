@@ -8,14 +8,33 @@ class FontStyle {
   static const light = FontWeight.w300;
 }
 
+class Line {
+  // 선 없음
+  static const none = TextDecoration.none;
+
+  // 밑줄
+  static const underLine = TextDecoration.underline;
+
+  // 윗줄
+  static const overLine = TextDecoration.overline;
+
+  // 취소선
+  static const throughLine = TextDecoration.lineThrough;
+}
+
 class Typo {
   final Color color;
   final FontWeight fontWeight;
 
+  // 텍스트 아래 선 표시 여부
+  final TextDecoration line;
+
   Typo(
-      this.color, [
-      this.fontWeight = FontStyle.medium
-  ]);
+      this.color, {
+        this.fontWeight = FontStyle.medium,
+        this.line = Line.none,
+      }
+  );
 
   TextStyle get h28 => TextStyle(
     fontSize: 28,
@@ -95,18 +114,21 @@ class Typo {
     color: color
   );
 
-  final button2 = TextStyle(
+  TextStyle get button2 => TextStyle(
     fontSize: 14,
     fontWeight: FontStyle.medium,
     height: 11,
     letterSpacing: 0,
-    color: Colors.black
+    color: color,
+    decoration: line,
+    decorationColor: color
   );
 
-  final caption = TextStyle(
+  TextStyle get caption => TextStyle(
     fontSize: 12,
     fontWeight: FontStyle.light,
     letterSpacing: 0,
-    color: Colors.black
+    color: color,
+    decorationColor: color
   );
 }

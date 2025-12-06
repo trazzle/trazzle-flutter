@@ -16,7 +16,7 @@ class _BackgroundSliderState extends State<BackgroundSlider> {
   @override
   void initState() {
     super.initState();
-    Timer.periodic(Duration(seconds: 5), (timer) {
+    Timer.periodic(Duration(seconds: 2), (timer) {
       setState(() {
         _currentIndex = ((_currentIndex + 1) % Const().images.length);
       });
@@ -26,7 +26,7 @@ class _BackgroundSliderState extends State<BackgroundSlider> {
   @override
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 5),
       child: Container(
         key: ValueKey(_currentIndex),
         decoration: BoxDecoration(
