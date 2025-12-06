@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Trazzle 프로젝트',
-      home: const OnboardingScreen(),
+      home: const MainPage(),
     );
   }
 }
