@@ -9,7 +9,9 @@ class FloatingAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: null,
+      onPressed: () {
+        Navigator.pushNamed(context, "/travel_i");
+      },
       backgroundColor: PrimaryColors.p500,
       shape: CircleBorder(),
       child: SvgIcon(assets: Assets().addIcon)

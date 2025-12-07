@@ -14,6 +14,9 @@ class Const {
   // 대륙 리스트
   final continentList = [ "아시아", "유럽", "아프리카", "북아메리카", "남아메리카", "오세아니아" ];
 
+  // 국가 테스트 리스트 (아시아)
+  final countriesList = [ "대한민국", "일본", "대만", "중국", "부탄", "태국"];
+
   // 국가 -> 대륙 매핑
   final Map<String, String> countryToContinentList = {
     "Namibia": "아프리카",
