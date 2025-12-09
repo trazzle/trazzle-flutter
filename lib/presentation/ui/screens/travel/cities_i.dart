@@ -13,7 +13,7 @@ class CitiesInsertScreen extends StatefulWidget {
 }
 
 class _CitiesInsertScreenState extends State<CitiesInsertScreen> {
-  int? selectedIndex;
+  Set<int> selectedIndexes = {};
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,11 @@ class _CitiesInsertScreenState extends State<CitiesInsertScreen> {
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              selectedIndex = index;
+                              if (selectedIndexes.contains(index)) {
+                                selectedIndexes.remove(index);
+                              } else {
+                                selectedIndexes.add(index);
+                              }
                             });
                           },
                           child: Card(
@@ -112,7 +116,7 @@ class _CitiesInsertScreenState extends State<CitiesInsertScreen> {
                                     
                                     Padding(
                                       padding: const EdgeInsets.only(right: 16),
-                                      child: selectedIndex == index
+                                      child: selectedIndexes.contains(index)
                                           ? SvgIcon(assets: "assets/check_icon.svg")
                                           : const SizedBox(width: 24)
                                     )
