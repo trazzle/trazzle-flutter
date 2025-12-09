@@ -4,6 +4,7 @@ import 'package:trazzle/presentation/const/colors.dart';
 import 'package:trazzle/presentation/ui/screens/home_s.dart';
 import 'package:trazzle/presentation/ui/screens/onboarding/onboarding_s.dart';
 import 'package:trazzle/presentation/ui/screens/story_s.dart';
+import 'package:trazzle/presentation/ui/screens/travel/cities_i.dart';
 import 'package:trazzle/presentation/ui/screens/travel/travel_i.dart';
 import 'package:trazzle/presentation/widgets/svg_icon.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -48,7 +49,8 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/travel_i": (_) => TravelInsertScreen()
+        "/travel_i": (_) => TravelInsertScreen(),
+        "/travel_cities_i": (_) => CitiesInsertScreen()
       },
       home: Scaffold(
         body: screens[currentIndex],

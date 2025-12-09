@@ -17,6 +17,9 @@ class Const {
   // 국가 테스트 리스트 (아시아)
   final countriesList = [ "대한민국", "일본", "대만", "중국", "부탄", "태국"];
 
+  // 도시 테스트 리스트 (아시아)
+  final citiesList = [ "서울", "경기", "인천", "부산", "대구", "경주", "여수", "대전", "강릉", "속초" ];
+
   // 국가 -> 대륙 매핑
   final Map<String, String> countryToContinentList = {
     "Namibia": "아프리카",

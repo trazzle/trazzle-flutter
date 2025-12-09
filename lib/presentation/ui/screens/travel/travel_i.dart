@@ -51,7 +51,7 @@ class _TravelInsertScreenState extends State<TravelInsertScreen> {
                 controller: searchController,
                 onChanged: onChanged,
                 decoration: InputDecoration(
-                  hintText: '국가명으로 입력',
+                  hintText: '국가명으로 검색',
                   hintStyle: Typo(MainColors.g200, fontWeight: FontStyle.regular).body1,
                   filled: true,
                   fillColor: MainColors.white,
@@ -124,28 +124,33 @@ class _TravelInsertScreenState extends State<TravelInsertScreen> {
                     return SizedBox(
                       width: 343,
                       height: 52,
-                      child: Card(
-                        margin: EdgeInsets.zero,
-                        color: MainColors.white,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: MainColors.white,
-                            borderRadius: isFirst
-                                ? const BorderRadius.only(
-                              topLeft: Radius.circular(12),
-                              topRight: Radius.circular(12),
-                            )
-                                : BorderRadius.zero, // 나머지는 radius 없음
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 16),
-                            child: Row(
-                              children: [
-                                Text(
-                                  country,
-                                  style: Typo(MainColors.g900, fontWeight: FontStyle.medium).button1,
-                                )
-                              ],
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, "/travel_cities_i");
+                        },
+                        child: Card(
+                          margin: EdgeInsets.zero,
+                          color: MainColors.white,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: MainColors.white,
+                              borderRadius: isFirst
+                                  ? const BorderRadius.only(
+                                topLeft: Radius.circular(12),
+                                topRight: Radius.circular(12),
+                              )
+                                  : BorderRadius.zero, // 나머지는 radius 없음
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 16),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    country,
+                                    style: Typo(MainColors.g900, fontWeight: FontStyle.medium).button1,
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
