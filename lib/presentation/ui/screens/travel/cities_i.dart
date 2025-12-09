@@ -3,6 +3,7 @@ import 'package:trazzle/presentation/component/bar/app_bar.dart';
 import 'package:trazzle/presentation/const/colors.dart';
 import 'package:trazzle/presentation/const/const.dart';
 import 'package:trazzle/presentation/const/typography.dart';
+import 'package:trazzle/presentation/util/filter.dart';
 import 'package:trazzle/presentation/widgets/svg_icon.dart';
 
 class CitiesInsertScreen extends StatefulWidget {
@@ -13,16 +14,25 @@ class CitiesInsertScreen extends StatefulWidget {
 }
 
 class _CitiesInsertScreenState extends State<CitiesInsertScreen> {
+  TextEditingController searchController = TextEditingController();
+
   Set<int> selectedIndexes = {};
+  List<String> filteredCities = [];
+
+  @override
+  void initState() {
+    super.initState();
+    filteredCities = Const().citiesList;
+  }
+
+  void onChanged(String query) {
+    setState(() {
+      filteredCities = Filters().filterCities(Const().citiesList, query);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController searchController = TextEditingController();
-
-    void onChanged(value) {
-
-    }
-
     return Scaffold(
         backgroundColor: MainColors.g50,
         appBar: TravelAppBar(title: "대한민국"),
@@ -61,7 +71,7 @@ class _CitiesInsertScreenState extends State<CitiesInsertScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "총 ${Const().citiesList.length}개 도시",
+                      "총 ${filteredCities.length}개 도시",
                       style: Typo(MainColors.g300, fontWeight: FontStyle.light).caption,
                     )
                   ],
@@ -74,8 +84,8 @@ class _CitiesInsertScreenState extends State<CitiesInsertScreen> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
-                    children: Const().citiesList.map((country) {
-                      final index = Const().citiesList.indexOf(country);
+                    children: filteredCities.map((country) {
+                      final index = filteredCities.indexOf(country);
                       final isFirst = index == 0;
 
                       return SizedBox(
@@ -131,6 +141,13 @@ class _CitiesInsertScreenState extends State<CitiesInsertScreen> {
                   ),
                 ),
               ),
+
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("1234")
+                ],
+              )
             ],
           ),
         )
